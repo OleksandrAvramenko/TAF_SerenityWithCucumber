@@ -3,25 +3,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>packages.example</groupId>
-    <artifactId>TAF_SerenityWithCucumber</artifactId>
+    <artifactId>TAF_SerenityWithjBehave</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Sample Serenity project using Cucumber</name>
+    <name>Sample Serenity project using jBehave</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <serenity.version>3.1.16</serenity.version>
         <serenity.jbehave.version>1.46.0</serenity.jbehave.version>
-        <junit.version>4.13.2</junit.version>
+        <jbehave-core.version>4.6.3</jbehave-core.version>
         <lombok.version>1.18.10</lombok.version>
-        <log4j-core.version>2.12.1</log4j-core.version>
-        <log4j-api.version>2.12.1</log4j-api.version>
+        <log4j-core-version>2.12.1</log4j-core-version>
+        <log4j-api-version>2.12.1</log4j-api-version>
         <assertj-core.version>3.22.0</assertj-core.version>
         <slf4j-simple.version>1.7.7</slf4j-simple.version>
-        <cucumber-junit.version>7.2.3</cucumber-junit.version>
-        <cucumber-java.version>7.2.3</cucumber-java.version>
-        <serenity-cucumber.version>3.1.16</serenity-cucumber.version>
     </properties>
 
     <dependencies>
@@ -31,6 +28,16 @@
             <version>${serenity.version}</version>
         </dependency>
         <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-jbehave</artifactId>
+            <version>${serenity.jbehave.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>${jbehave-core.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j-simple.version}</version>
@@ -38,12 +45,12 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>${log4j-core.version}</version>
+            <version>${log4j-core-version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>${log4j-api.version}</version>
+            <version>${log4j-api-version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -56,26 +63,7 @@
             <artifactId>assertj-core</artifactId>
             <version>${assertj-core.version}</version>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber-junit.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber-java.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>serenity-cucumber</artifactId>
-            <version>${serenity-cucumber.version}</version>
-        </dependency>
+
     </dependencies>
     <build>
         <plugins>

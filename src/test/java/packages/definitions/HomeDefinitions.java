@@ -1,7 +1,8 @@
 package packages.definitions;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+
 import net.thucydides.core.annotations.Steps;
+import org.jbehave.core.annotations.Then;
+import org.jbehave.core.annotations.When;
 import packages.steps.HomeSteps;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,18 +22,18 @@ public class HomeDefinitions {
         assertThat(homeSteps.verifyProductItemGridIsDisplayed()).isTrue();
     }
 
-    @Then("Product Item Grid size equals {int}")
+    @Then("Product Item Grid size equals '$gridSize'")
     public void productItemGridSizeEquals(final int size) {
         assertThat(homeSteps.getProductItemGridSize()).isEqualTo(size);
     }
 
-    @When("I add item with {string} name to Cart")
+    @When("I add item with '$itemName' name to Cart")
     public void addItemWithSpecificNameToCart(final String itemName) {
         homeSteps.addItemWithSpecificNameToCart(itemName);
     }
 
-    @Then("Cart Items Badge count equals {string}")
-    public void cartBadgeCountEquals(final String text) {
-        assertThat(homeSteps.getCartBadgeCountText()).isEqualTo(text);
+    @Then("Cart Items Badge count equals '$itemCount'")
+    public void cartBadgeCountEquals(final String itemsCount) {
+        assertThat(homeSteps.getCartBadgeCountText()).isEqualTo(itemsCount);
     }
 }

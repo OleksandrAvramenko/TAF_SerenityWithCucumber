@@ -2,14 +2,17 @@ package core.service;
 
 import enums.Props;
 import exceptions.ReadingPropertiesException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class ConfigurationManager {
-    private static ConfigurationManager instance;
+    private static final Logger LOGGER = LogManager.getLogger();
     private static Properties properties = new Properties();
 
     private static final String ENV_PROPERTY = "env";
@@ -18,15 +21,14 @@ public class ConfigurationManager {
     private static final String PROPERTY_FILE_PATH_MASK = RESOURCES_PATH + File.separator +
             "environments" + File.separator + "%s.properties";
 
+    private ConfigurationManager() {
+    }
+
     public static String getProperty(final Props propertyName) {
-        if (instance == null) {
-            instance = new ConfigurationManager();
-            instance.loadProperties();
-        }
         return properties.getProperty(propertyName.getValue());
     }
 
-    private void loadProperties() {
+    public static void loadProperties() {
         String environment = System.getProperty(ENV_PROPERTY);
         try {
             File file = new File(String.format(PROPERTY_FILE_PATH_MASK, environment));
@@ -35,5 +37,11 @@ public class ConfigurationManager {
             throw new ReadingPropertiesException("Configuration properties file cannot be found." +
                     " Unable to read properties");
         }
+        logConfiguration();
+    }
+
+    private static void logConfiguration() {
+        Arrays.stream(Props.values()).forEach(key -> LOGGER.debug("Read property " +
+                key.name() + ":'" + key.getValue() + "' -> '" + getProperty(key) + "'"));
     }
 }

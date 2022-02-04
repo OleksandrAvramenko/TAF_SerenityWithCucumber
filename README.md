@@ -1,4 +1,4 @@
-TEST AUTOMATION FRAMEWORK: Serenity+Cucumber+Maven
+TEST AUTOMATION FRAMEWORK: Serenity+jBehave+Maven
 
 ### About project
 Sample Serenity project using Cucumber
@@ -17,7 +17,6 @@ Sample Serenity project using Cucumber
 9. Serenity configuration:
 ...\src\test\resources\serenity.conf
 10. Simple Maven run configuration to run test suite:
-A. clean verify -Denv=dev -Dtags=smoke
-B. clean verify -Denv=dev -Dtags=smoke -DforkCount=0 - to debug
+A. clean verify -Denv=dev -Dmetaflter=+smoke
+B. clean verify -Denv=dev -Dmetafilter=+smoke -DforkCount=0 - to debug
 11. Maven command to generate Allure report in target report directory...\target\site\index.html
-mvn allure:report

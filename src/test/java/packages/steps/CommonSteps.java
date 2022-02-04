@@ -21,4 +21,8 @@ public class CommonSteps extends ScenarioSteps {
     public String getCurrentPageTitle() {
         return getDriver().getTitle();
     }
+
+    public void setUp() {
+        ConfigurationManager.loadProperties();
+    }
 }

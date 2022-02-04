@@ -46,3 +46,4 @@ public class ProductItemGrid extends AbstractComponent {
                 .waitFor(inventoryContainer).isCurrentlyVisible();
     }
 }
+

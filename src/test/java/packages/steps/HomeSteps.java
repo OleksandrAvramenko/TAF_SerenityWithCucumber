@@ -5,6 +5,8 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.fluentlenium.core.annotation.Page;
 import pages.home.HomePage;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class HomeSteps extends ScenarioSteps {
 
     @Page

@@ -1,10 +1,10 @@
 package packages.definitions;
 
-import core.service.UserManager.UserType;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import core.service.UserManager;
 import net.thucydides.core.annotations.Steps;
+import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Then;
+import org.jbehave.core.annotations.When;
 import packages.steps.CommonSteps;
 import packages.steps.LoginSteps;
 
@@ -29,14 +29,13 @@ public class LoginDefinitions {
         loginSteps.clickLoginButton();
     }
 
-    @When("User login with '{}' credentials")
-    public void loginSpecificUserCredentials(final UserType userType) {
+    @When("User login with '$userType' credentials")
+    public void loginSpecificUserCredentials(final UserManager.UserType userType) {
         loginSteps.inputSpecificUserCredentials(userType);
         clickLoginButton();
     }
 
-
-    @Then("Login Error Message contains text {string}")
+    @Then("Login Error Message contains text '$message'")
     public void verifyLoginErrorMessageText(final String message) {
         assertThat(loginSteps.getLoginMessageText()).contains(message);
     }

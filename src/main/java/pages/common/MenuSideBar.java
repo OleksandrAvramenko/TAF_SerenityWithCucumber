@@ -21,6 +21,4 @@ public class MenuSideBar extends AbstractComponent {
 
         private String menuText;
     }
-
-
 }
