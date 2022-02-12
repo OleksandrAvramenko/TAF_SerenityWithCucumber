@@ -10,7 +10,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 @CucumberOptions(
         features = "src/test/resources/features",
         snippets = CAMELCASE,
-        plugin = {"json:target/cucumber/cucumber-report.json"}
+        plugin = {"core.cucumber.FrameworkListener"}
 )
 public class AcceptanceTest {
 }

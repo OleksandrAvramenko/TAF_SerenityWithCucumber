@@ -19,5 +19,3 @@ Sample Serenity project using Cucumber
 10. Simple Maven run configuration to run test suite:
 A. clean verify -Denv=dev -Dtags=smoke
 B. clean verify -Denv=dev -Dtags=smoke -DforkCount=0 - to debug
-11. Maven command to generate Allure report in target report directory...\target\site\index.html
-mvn allure:report
