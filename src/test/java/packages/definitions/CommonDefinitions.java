@@ -8,9 +8,4 @@ public class CommonDefinitions {
 
     @Steps
     private CommonSteps commonSteps;
-
-    @BeforeStories
-    public void setUp() {
-     commonSteps.setUp();
-    }
 }
