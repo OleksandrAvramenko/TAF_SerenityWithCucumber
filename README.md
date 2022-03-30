@@ -1,7 +1,7 @@
 TEST AUTOMATION FRAMEWORK: Serenity+jBehave+Maven
 
 ### About project
-Sample Serenity project using Cucumber
+Sample Serenity project using jBehave
 
 ### Working with framework
 1. Install latest JDK (at least 1.8.x version).
