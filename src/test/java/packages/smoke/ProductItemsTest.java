@@ -1,13 +1,14 @@
 package packages.smoke;
 
 import core.service.UserManager;
+import packages.BaseTest;
 import packages.steps.HomeSteps;
 import packages.steps.LoginSteps;
 import org.testng.annotations.Test;
 
 import static core.service.UserManager.UserType.*;
 
-public class ProductItemsTest extends FunctionalTest {
+public class ProductItemsTest extends BaseTest {
 
     private LoginSteps loginSteps;
     private HomeSteps homeSteps;

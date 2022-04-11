@@ -1,30 +1,18 @@
 package enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum Props {
-
-    @Value("${env}")
-    ENV,
-
-    @Value("${host}")
-    HOST_URL,
-
-    @Value("${standard.user.name}")
-    STANDARD_USER_NAME,
-
-    @Value("${standard.user.password}")
-    STANDARD_USER_PASSWORD,
-
-    @Value("${locked.user.name}")
-    LOCKED_OUT_USER_NAME,
-
-    @Value("${locked.user.password}")
-    LOCKED_OUT_USER_PASSWORD,
-
-    @Value("${page.load.timeout}")
-    PAGE_LOAD_TIMEOUT;
+    ENV("env"),
+    HOST_URL("host"),
+    STANDARD_USER_NAME("standard.user.name"),
+    STANDARD_USER_PASSWORD("standard.user.password"),
+    LOCKED_OUT_USER_NAME("locked.user.name"),
+    LOCKED_OUT_USER_PASSWORD("locked.user.password"),
+    PAGE_LOAD_TIMEOUT("page.load.timeout");
 
     private String value;
 }

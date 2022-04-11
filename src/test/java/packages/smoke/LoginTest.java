@@ -1,5 +1,6 @@
 package packages.smoke;
 
+import packages.BaseTest;
 import packages.steps.LoginSteps;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -7,7 +8,7 @@ import org.testng.annotations.Test;
 import static core.service.UserManager.*;
 import static core.service.UserManager.UserType.*;
 
-public class LoginTest extends FunctionalTest {
+public class LoginTest extends BaseTest {
 
     private LoginSteps loginSteps;
 
