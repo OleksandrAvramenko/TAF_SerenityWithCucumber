@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverConfig {
 
-    public WebDriver chromeDriver() {
+    public static WebDriver getChromeDriver() {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
 
-    public WebDriverWait webDriverWait(final WebDriver driver) {
+    public static WebDriverWait getWebDriverWait(final WebDriver driver) {
         return new WebDriverWait(driver, 10);
     }
 }

@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.udemy.spring</groupId>
-    <artifactId>spring-selenium-my</artifactId>
+    <artifactId>testng-selenium</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Sample TestNG project using Selenium</name>
     <properties>
@@ -83,7 +83,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <skip>true</skip>
+                    <skip>false</skip>
                 </configuration>
             </plugin>
             <plugin>
@@ -101,6 +101,13 @@
                         <suiteXmlFile>${basedir}/src/test/java/packages/suites/debug.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-testng</artifactId>
+                        <version>2.19.1</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <goals>

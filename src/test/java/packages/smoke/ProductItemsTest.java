@@ -1,18 +1,20 @@
 package packages.smoke;
 
-import core.service.UserManager;
-import packages.BaseTest;
-import packages.steps.HomeSteps;
-import packages.steps.LoginSteps;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import packages.BaseTest;
+import packages.steps.LoginSteps;
 
-import static core.service.UserManager.UserType.*;
+import static core.service.UserManager.UserType.STANDARD_USER;
 
 public class ProductItemsTest extends BaseTest {
 
     private LoginSteps loginSteps;
-    private HomeSteps homeSteps;
-    private UserManager.UserType userManager;
+
+    @BeforeTest
+    public void setupTest() {
+        loginSteps = new LoginSteps();
+    }
 
     @Test
     public void verifyProductItemGridSize() {

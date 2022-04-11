@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HomeSteps {
 
-    private HomePage homePage;
+    private HomePage homePage = new HomePage();
 
     public HomeSteps verifyHomePageIsOpened() {
         assertThat(homePage.isPageOpened()).isTrue();

@@ -3,6 +3,9 @@
     <test name="Debug" parallel="methods" thread-count="1" preserve-order="true">
         <classes>
             <class name="packages.smoke.LoginTest">
+                <methods>
+                    <include name="verifySuccessfulLoginWithStandardUser"/>
+                </methods>
             </class>
         </classes>
     </test>

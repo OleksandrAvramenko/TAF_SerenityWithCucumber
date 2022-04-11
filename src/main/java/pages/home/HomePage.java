@@ -1,5 +1,6 @@
 package pages.home;
 
+import org.openqa.selenium.WebDriver;
 import pages.AbstractBasePage;
 import pages.common.MenuSideBar;
 import lombok.Getter;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends AbstractBasePage {
 
     private ProductItemGrid productItemGrid;
-
     private MenuSideBar menuSideBar;
 
     @FindBy(xpath = ".//button[contains(@id, 'menu-btn')]")
@@ -21,6 +21,12 @@ public class HomePage extends AbstractBasePage {
 
     @FindBy(xpath = ".//span[@class='shopping_cart_badge']")
     private WebElement cartItemsBadge;
+
+    public HomePage(final WebDriver driver) {
+        init(driver);
+        productItemGrid = new ProductItemGrid(driver);
+        menuSideBar = new MenuSideBar(driver);
+    }
 
     @Override
     public boolean isPageOpened() {

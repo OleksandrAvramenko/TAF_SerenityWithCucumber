@@ -1,16 +1,23 @@
 package packages.smoke;
 
-import packages.BaseTest;
-import packages.steps.LoginSteps;
+import core.service.UserManager.UserType;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import packages.BaseTest;
+import packages.steps.LoginSteps;
 
-import static core.service.UserManager.*;
 import static core.service.UserManager.UserType.*;
+
 
 public class LoginTest extends BaseTest {
 
     private LoginSteps loginSteps;
+
+    @BeforeTest
+    public void setupTest() {
+        loginSteps = new LoginSteps();
+    }
 
     @Test
     public void verifySuccessfulLoginWithStandardUser() {

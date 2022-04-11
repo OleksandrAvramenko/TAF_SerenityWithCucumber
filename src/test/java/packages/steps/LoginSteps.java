@@ -1,7 +1,7 @@
 package packages.steps;
 
-import pages.login.LoginPage;
 import models.User;
+import pages.login.LoginPage;
 
 import static core.service.UserManager.UserType;
 import static core.service.UserManager.getUser;

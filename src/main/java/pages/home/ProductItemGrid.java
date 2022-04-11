@@ -1,5 +1,6 @@
 package pages.home;
 
+import org.openqa.selenium.WebDriver;
 import pages.AbstractComponent;
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -29,6 +30,10 @@ public class ProductItemGrid extends AbstractComponent {
     @FindBy(xpath = ".//div[@class='inventory_item']")
     private List<WebElement> productItems;
 
+    public ProductItemGrid(final WebDriver driver) {
+        init(driver);
+    }
+
     public WebElement getProductItemByName(final String name) {
         return getDriver()
                 .findElement(By.xpath(String.format(productItemXpathByNameMask, name)));
@@ -41,6 +46,6 @@ public class ProductItemGrid extends AbstractComponent {
 
     @Override
     public boolean isDisplayed() {
-        return getWait().until((driver) -> inventoryContainer.isDisplayed());
+        return getWait().until(driver -> inventoryContainer.isDisplayed());
     }
 }
