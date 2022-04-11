@@ -1,13 +1,11 @@
 package pages.login;
 
-import pages.AbstractBasePage;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.stereotype.Component;
+import pages.AbstractBasePage;
 
 @Getter
-@Component
 public class LoginPage extends AbstractBasePage {
 
     @FindBy(xpath = ".//input[@id='user-name']")

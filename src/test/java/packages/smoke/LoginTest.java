@@ -1,18 +1,14 @@
 package packages.smoke;
 
-import com.udemy.spring.springseleniummy.FunctionalTest;
 import packages.steps.LoginSteps;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static core.service.UserManager.*;
 import static core.service.UserManager.UserType.*;
 
-
 public class LoginTest extends FunctionalTest {
 
-    @Autowired
     private LoginSteps loginSteps;
 
     @Test
@@ -56,6 +52,4 @@ public class LoginTest extends FunctionalTest {
                 {EMPTY_PASSWORD_USER, "Epic sadface: Password is required"}
         };
     }
-
-
 }

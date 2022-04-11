@@ -4,10 +4,8 @@ import pages.AbstractComponent;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.stereotype.Component;
 
 @Getter
-@Component
 public class ProductItem extends AbstractComponent {
 
     @FindBy(xpath = ".//div[@class='inventory_item_name']")

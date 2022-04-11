@@ -2,21 +2,15 @@ package packages.steps;
 
 import pages.login.LoginPage;
 import models.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import static core.service.UserManager.UserType;
 import static core.service.UserManager.getUser;
 import static enums.Props.HOST_URL;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Component
 public class LoginSteps {
 
-    @Autowired
     private LoginPage loginPage;
-
-    @Autowired
     private HomeSteps homeSteps;
 
     public LoginSteps userIsOnSwagLabLoginPage() {

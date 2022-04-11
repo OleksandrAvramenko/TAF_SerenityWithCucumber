@@ -5,12 +5,10 @@ import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Getter
-@Component
 public class ProductItemGrid extends AbstractComponent {
 
     private String productItemXpathByNameMask = ".//div[(@class='inventory_item_name') and contains(text(),'%s')]//ancestor::div[@class='inventory_item']";

@@ -1,11 +1,8 @@
 package enums;
 
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 
 @Getter
-@PropertySource("file:${basedir}/src/main/resources/environments/dev.properties")
 public enum Props {
 
     @Value("${env}")

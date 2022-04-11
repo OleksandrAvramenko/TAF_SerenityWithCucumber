@@ -5,17 +5,12 @@ import pages.common.MenuSideBar;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 @Getter
-@Component
 public class HomePage extends AbstractBasePage {
 
-    @Autowired
     private ProductItemGrid productItemGrid;
 
-    @Autowired
     private MenuSideBar menuSideBar;
 
     @FindBy(xpath = ".//button[contains(@id, 'menu-btn')]")

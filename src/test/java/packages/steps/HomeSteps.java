@@ -1,15 +1,11 @@
 package packages.steps;
 
 import pages.home.HomePage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Component
 public class HomeSteps {
 
-    @Autowired
     private HomePage homePage;
 
     public HomeSteps verifyHomePageIsOpened() {

@@ -2,46 +2,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
     <groupId>com.udemy.spring</groupId>
     <artifactId>spring-selenium-my</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-selenium-my</name>
-    <description>spring selenium framework</description>
+    <name>Sample TestNG project using Selenium</name>
     <properties>
         <defaultSuite>smoke</defaultSuite>
         <suite>${defaultSuite}</suite>
         <defaultEnv>dev</defaultEnv>
         <env>${defaultEnv}</env>
 
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>8</java.version>
         <selenium.version>3.141.59</selenium.version>
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
         <testng.version>7.5</testng.version>
         <lombok.version>1.18.10</lombok.version>
         <assertj-core.version>3.22.0</assertj-core.version>
+        <log4j-core.version>2.12.1</log4j-core.version>
+        <log4j-api.version>2.12.1</log4j-api.version>
+        <slf4j-simple.version>1.7.7</slf4j-simple.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
-        </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -69,13 +51,32 @@
             <artifactId>assertj-core</artifactId>
             <version>${assertj-core.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j-api.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.6.3</version>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -97,12 +98,8 @@
                     </includes>
                     <argLine>-Xmx512m</argLine>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${basedir}/src/test/java/com/udemy/spring/springseleniummy/suites/debug.xml
-                        </suiteXmlFile>
+                        <suiteXmlFile>${basedir}/src/test/java/packages/suites/debug.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <spring.profiles.active>${env}</spring.profiles.active>
-                    </systemPropertyVariables>
                 </configuration>
                 <executions>
                     <execution>

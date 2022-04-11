@@ -3,9 +3,7 @@ package pages.common;
 import pages.AbstractComponent;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.stereotype.Component;
 
-@Component
 public class MenuSideBar extends AbstractComponent {
 
     @Override
