@@ -1,5 +1,7 @@
-package driver;
+package core.driver;
 
+import core.service.ConfigurationManager;
+import enums.Props;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,6 +21,10 @@ public class DriverSession {
     }
 
     public static WebDriverWait getDriverWait() {
-        return new WebDriverWait(driver, 10);
+        return new WebDriverWait(driver, Long.valueOf(ConfigurationManager.getProperty(Props.EXPLICITLY_TIMEOUT)));
+    }
+
+    public static WebDriverWait getPageLoadTimeout() {
+        return new WebDriverWait(driver, Long.valueOf(ConfigurationManager.getProperty(Props.PAGE_LOAD_TIMEOUT)));
     }
 }

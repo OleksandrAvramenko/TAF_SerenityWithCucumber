@@ -1,6 +1,6 @@
 package pages;
 
-import driver.DriverSession;
+import core.driver.DriverSession;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +11,7 @@ public abstract class AbstractComponent {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private WebDriverWait componentLoadWait;
 
     protected void init() {
         this.driver = DriverSession.getDriver();

@@ -1,4 +1,4 @@
-package driver;
+package core.driver;
 
 import lombok.Getter;
 

@@ -1,7 +1,7 @@
-TEST AUTOMATION FRAMEWORK: Serenity+Cucumber+Maven
+TEST AUTOMATION FRAMEWORK: TestNG+Selenium
 
 ### About project
-Sample Serenity project using Cucumber
+Sample TestNG project using Selenium
 
 ### Working with framework
 1. Install latest JDK (at least 1.8.x version).
@@ -13,9 +13,8 @@ Sample Serenity project using Cucumber
 7. Use environment property file to setup configuration:
 ...\src\main\resources\environments
 8. Folder with test suites configuration:
-...\src\test\java\tests
-9. Serenity configuration:
-...\src\test\resources\serenity.conf
-10. Simple Maven run configuration to run test suite:
-A. clean verify -Denv=dev -Dtags=smoke
-B. clean verify -Denv=dev -Dtags=smoke -DforkCount=0 - to debug
+...\src\test\java\packages\suits 
+9. Simple Maven run configuration to run test suite:
+
+clean verify -Denv=dev -Dsuite=debug.xml 
+clean verify -Denv=dev -Dsuite=debug.xml -DforkCount=0 - to debug

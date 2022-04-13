@@ -26,6 +26,6 @@ public class LoginPage extends AbstractBasePage {
 
     @Override
     public boolean isPageOpened() {
-        return getWait().until(driver -> loginButton.isDisplayed());
+        return getPageToLoadWait().until(driver -> loginButton.isDisplayed());
     }
 }

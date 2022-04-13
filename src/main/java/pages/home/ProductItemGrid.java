@@ -45,6 +45,6 @@ public class ProductItemGrid extends AbstractComponent {
 
     @Override
     public boolean isDisplayed() {
-        return getWait().until(driver -> inventoryContainer.isDisplayed());
+        return getComponentLoadWait().until(driver -> inventoryContainer.isDisplayed());
     }
 }

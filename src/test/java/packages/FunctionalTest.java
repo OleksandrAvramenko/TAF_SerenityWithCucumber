@@ -1,10 +1,10 @@
 package packages;
 
 import core.service.ConfigurationManager;
-import driver.DriverManager;
-import driver.DriverManagerFactory;
-import driver.DriverSession;
-import driver.DriverType;
+import core.driver.DriverManager;
+import core.driver.DriverManagerFactory;
+import core.driver.DriverSession;
+import core.driver.DriverType;
 import enums.Props;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
