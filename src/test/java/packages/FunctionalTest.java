@@ -8,18 +8,21 @@ import driver.DriverType;
 import enums.Props;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+
+import java.util.concurrent.TimeUnit;
+
+import static enums.Props.IMPLICITLY_TIMEOUT;
 
 public class FunctionalTest {
 
-    protected static DriverManager driverManager;
+    private static DriverManager driverManager;
 
     @BeforeSuite
     public void setUp() {
         ConfigurationManager.loadProperties();
         initDriver();
+        configDriver();
     }
 
     @AfterSuite
@@ -36,5 +39,11 @@ public class FunctionalTest {
         DriverType driverType = DriverType.valueOf(ConfigurationManager.getProperty(Props.BROWSER));
         driverManager = DriverManagerFactory.getDriverManager(driverType);
         DriverSession.setDriver(driverManager.getDriver());
+    }
+
+    private void configDriver() {
+        Long implicitlyTimeout = Long.valueOf(ConfigurationManager.getProperty(IMPLICITLY_TIMEOUT));
+        driverManager.getDriver().manage().timeouts().implicitlyWait(implicitlyTimeout, TimeUnit.SECONDS);
+        driverManager.getDriver().manage().window().maximize();
     }
 }

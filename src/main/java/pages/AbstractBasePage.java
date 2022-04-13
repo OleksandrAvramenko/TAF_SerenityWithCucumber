@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @Getter
 public abstract class AbstractBasePage {
 
-    protected WebDriver driver;
-    protected WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     protected void init() {
         this.driver = DriverSession.getDriver();

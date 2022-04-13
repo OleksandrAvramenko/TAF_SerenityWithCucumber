@@ -1,9 +1,8 @@
 package packages.steps;
 
+import core.service.ConfigurationManager;
 import lombok.NoArgsConstructor;
 import models.User;
-import org.openqa.selenium.WebDriver;
-import pages.home.HomePage;
 import pages.login.LoginPage;
 
 import static core.service.UserManager.UserType;
@@ -24,7 +23,7 @@ public class LoginSteps {
     }
 
     public LoginSteps navigateToBaseUrl() {
-        loginPage.getDriver().get(HOST_URL.getValue());
+        loginPage.getDriver().get(ConfigurationManager.getProperty(HOST_URL));
         return this;
     }
 

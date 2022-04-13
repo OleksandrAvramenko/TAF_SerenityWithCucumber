@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.udemy.spring</groupId>
+    <groupId>com.my</groupId>
     <artifactId>testng-selenium</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Sample TestNG project using Selenium</name>
     <properties>
-        <defaultSuite>smoke</defaultSuite>
+        <defaultSuite>debug</defaultSuite>
         <suite>${defaultSuite}</suite>
         <defaultEnv>dev</defaultEnv>
         <env>${defaultEnv}</env>
@@ -38,7 +38,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -83,31 +82,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <skip>false</skip>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>${basedir}/src/test/java/packages/suites/${suite}.xml</suiteXmlFile>
+                        </suiteXmlFiles>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.0.0-M5</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*TestSuite.java</include>
-                        <include>**/Test*.java</include>
-                        <include>**/When*.java</include>
-                    </includes>
-                    <argLine>-Xmx512m</argLine>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${basedir}/src/test/java/packages/suites/debug.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-testng</artifactId>
-                        <version>2.19.1</version>
-                    </dependency>
-                </dependencies>
                 <executions>
                     <execution>
                         <goals>

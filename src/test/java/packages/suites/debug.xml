@@ -2,11 +2,8 @@
 <suite name="Debug" parallel="false" data-provider-thread-count="1">
     <test name="Debug" parallel="methods" thread-count="1" preserve-order="true">
         <classes>
-            <class name="packages.smoke.LoginTest">
-                <methods>
-                    <include name="verifySuccessfulLoginWithStandardUser"/>
-                </methods>
-            </class>
+            <class name="packages.smoke.LoginTest"></class>
+            <class name="packages.smoke.ProductItemsTest"></class>
         </classes>
     </test>
 </suite>

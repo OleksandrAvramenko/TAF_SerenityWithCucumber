@@ -13,7 +13,9 @@ public enum Props {
     STANDARD_USER_PASSWORD("standard.user.password"),
     LOCKED_OUT_USER_NAME("locked.user.name"),
     LOCKED_OUT_USER_PASSWORD("locked.user.password"),
-    PAGE_LOAD_TIMEOUT("page.load.timeout");
+    PAGE_LOAD_TIMEOUT("page.load.timeout"),
+    IMPLICITLY_TIMEOUT("implicitly.timeout"),
+    EXPLICITLY_TIMEOUT("explicitly.timeout");
 
     private String value;
 }

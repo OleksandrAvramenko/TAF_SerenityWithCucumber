@@ -1,16 +1,17 @@
 package pages;
 
 import driver.DriverSession;
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public abstract class AbstractComponent extends AbstractBasePage {
+@Getter
+public abstract class AbstractComponent {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
-    @Override
     protected void init() {
         this.driver = DriverSession.getDriver();
         this.wait = DriverSession.getDriverWait();
@@ -18,9 +19,4 @@ public abstract class AbstractComponent extends AbstractBasePage {
     }
 
     public abstract boolean isDisplayed();
-
-    @Override
-    public boolean isPageOpened() {
-        return true;
-    }
 }
