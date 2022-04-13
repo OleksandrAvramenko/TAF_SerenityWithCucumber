@@ -7,6 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum Props {
     ENV("env"),
+    BROWSER("browser"),
     HOST_URL("host"),
     STANDARD_USER_NAME("standard.user.name"),
     STANDARD_USER_PASSWORD("standard.user.password"),

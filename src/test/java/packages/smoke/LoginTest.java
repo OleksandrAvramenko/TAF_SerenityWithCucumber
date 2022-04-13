@@ -1,27 +1,18 @@
 package packages.smoke;
 
 import core.service.UserManager.UserType;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import packages.BaseTest;
+import packages.FunctionalTest;
 import packages.steps.LoginSteps;
 
 import static core.service.UserManager.UserType.*;
 
-
-public class LoginTest extends BaseTest {
-
-    private LoginSteps loginSteps;
-
-    @BeforeTest
-    public void setupTest() {
-        loginSteps = new LoginSteps();
-    }
+public class LoginTest extends FunctionalTest {
 
     @Test
     public void verifySuccessfulLoginWithStandardUser() {
-        loginSteps
+        new LoginSteps()
                 .userIsOnSwagLabLoginPage()
                 .loginWithSpecificCredentials(STANDARD_USER)
                 .verifyHomePageIsOpened();
@@ -29,7 +20,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void verifyLoginErrorMessageForLockedOutUser() {
-        loginSteps
+        new LoginSteps()
                 .userIsOnSwagLabLoginPage()
                 .inputSpecificUserCredentials(LOCKED_OUT_USER)
                 .clickLoginButton()
@@ -38,15 +29,15 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void verifyLoginErrorMessageWhenNoCredEntered() {
-        loginSteps
+        new LoginSteps()
                 .userIsOnSwagLabLoginPage()
                 .clickLoginButton()
                 .verifyLoginErrorMessageText("Epic sadface: Username is required");
     }
 
     @Test (dataProvider = "usersWithEmptyOneOfMandatoryField")
-    public void verifyLoginErrorMessageWhenMotAllMandatoryFieldsEntered(final UserType user, final String message) {
-        loginSteps
+    public void verifyLoginErrorMessageWhenNotAllMandatoryFieldsEntered(final UserType user, final String message) {
+        new LoginSteps()
                 .userIsOnSwagLabLoginPage()
                 .inputSpecificUserCredentials(user)
                 .clickLoginButton()

@@ -2,13 +2,12 @@ package pages.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.openqa.selenium.WebDriver;
 import pages.AbstractComponent;
 
 public class MenuSideBar extends AbstractComponent {
 
-    public MenuSideBar(final WebDriver driver) {
-        init(driver);
+    public MenuSideBar() {
+        init();
     }
 
     @Override

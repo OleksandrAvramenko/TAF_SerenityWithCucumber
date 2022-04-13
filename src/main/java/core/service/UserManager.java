@@ -19,7 +19,7 @@ public class UserManager {
         User user;
         switch (userType) {
             case STANDARD_USER:
-                user = new User(STANDARD_USER_NAME.getValue(), STANDARD_USER_PASSWORD.getValue());
+                user = new User(ConfigurationManager.getProperty(STANDARD_USER_NAME), ConfigurationManager.getPropertySTANDARD_USER_PASSWORD.getValue());
                 break;
             case LOCKED_OUT_USER:
                 user = new User(LOCKED_OUT_USER_NAME.getValue(), LOCKED_OUT_USER_PASSWORD.getValue());

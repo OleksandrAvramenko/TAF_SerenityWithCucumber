@@ -1,11 +1,10 @@
 package pages.home;
 
-import org.openqa.selenium.WebDriver;
-import pages.AbstractComponent;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.AbstractComponent;
 
 import java.util.List;
 
@@ -30,8 +29,8 @@ public class ProductItemGrid extends AbstractComponent {
     @FindBy(xpath = ".//div[@class='inventory_item']")
     private List<WebElement> productItems;
 
-    public ProductItemGrid(final WebDriver driver) {
-        init(driver);
+    public ProductItemGrid() {
+        init();
     }
 
     public WebElement getProductItemByName(final String name) {

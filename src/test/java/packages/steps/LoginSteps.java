@@ -1,6 +1,9 @@
 package packages.steps;
 
+import lombok.NoArgsConstructor;
 import models.User;
+import org.openqa.selenium.WebDriver;
+import pages.home.HomePage;
 import pages.login.LoginPage;
 
 import static core.service.UserManager.UserType;
@@ -8,10 +11,11 @@ import static core.service.UserManager.getUser;
 import static enums.Props.HOST_URL;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@NoArgsConstructor
 public class LoginSteps {
 
-    private LoginPage loginPage;
-    private HomeSteps homeSteps;
+    private LoginPage loginPage = new LoginPage();
+    private HomeSteps homeSteps = new HomeSteps();
 
     public LoginSteps userIsOnSwagLabLoginPage() {
         navigateToBaseUrl();

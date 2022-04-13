@@ -22,10 +22,10 @@ public class HomePage extends AbstractBasePage {
     @FindBy(xpath = ".//span[@class='shopping_cart_badge']")
     private WebElement cartItemsBadge;
 
-    public HomePage(final WebDriver driver) {
-        init(driver);
-        productItemGrid = new ProductItemGrid(driver);
-        menuSideBar = new MenuSideBar(driver);
+    public HomePage() {
+        init();
+        productItemGrid = new ProductItemGrid();
+        menuSideBar = new MenuSideBar();
     }
 
     @Override

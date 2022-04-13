@@ -1,24 +1,16 @@
 package packages.smoke;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import packages.BaseTest;
+import packages.FunctionalTest;
 import packages.steps.LoginSteps;
 
 import static core.service.UserManager.UserType.STANDARD_USER;
 
-public class ProductItemsTest extends BaseTest {
-
-    private LoginSteps loginSteps;
-
-    @BeforeTest
-    public void setupTest() {
-        loginSteps = new LoginSteps();
-    }
+public class ProductItemsTest extends FunctionalTest {
 
     @Test
     public void verifyProductItemGridSize() {
-        loginSteps
+        new LoginSteps()
                 .userIsOnSwagLabLoginPage()
                 .loginWithSpecificCredentials(STANDARD_USER)
                 .verifyHomePageIsOpened()
@@ -28,7 +20,7 @@ public class ProductItemsTest extends BaseTest {
 
     @Test
     public void verifyAddToCardButton() {
-        loginSteps
+        new LoginSteps()
                 .userIsOnSwagLabLoginPage()
                 .loginWithSpecificCredentials(STANDARD_USER)
                 .verifyHomePageIsOpened()

@@ -1,7 +1,6 @@
 package pages.home;
 
 import lombok.Getter;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.AbstractComponent;
@@ -24,8 +23,8 @@ public class ProductItem extends AbstractComponent {
     @FindBy(xpath = ".//button[contains(@id, 'remove')]")
     private WebElement removeFromCartButton;
 
-    public ProductItem(final WebDriver driver) {
-        init(driver);
+    public ProductItem() {
+        init();
     }
 
     @Override
