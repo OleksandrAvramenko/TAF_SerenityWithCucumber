@@ -24,7 +24,7 @@ public class ProductItemsTest extends FunctionalTest {
                 .loginWithSpecificCredentials(STANDARD_USER)
                 .verifyHomePageIsOpened()
                 .verifyProductItemGridIsDisplayed()
-                .verifyProductItemGridSize(6);
+                .verifyProductItemGridSize(5);
     }
 
     @Test

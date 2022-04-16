@@ -1,5 +1,6 @@
 package packages;
 
+import core.allure.AllureListener;
 import core.service.ConfigurationManager;
 import core.driver.DriverManager;
 import core.driver.DriverManagerFactory;
@@ -9,11 +10,13 @@ import enums.Props;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
 import java.util.concurrent.TimeUnit;
 
 import static enums.Props.IMPLICITLY_TIMEOUT;
 
+@Listeners(AllureListener.class)
 public class FunctionalTest {
 
     private static DriverManager driverManager;
