@@ -16,6 +16,7 @@ public abstract class AbstractBasePage {
     protected void init() {
         this.driver = DriverSession.getDriver();
         this.wait = DriverSession.getDriverWait();
+        this.pageToLoadWait = DriverSession.getPageLoadTimeout();
         PageFactory.initElements(driver, this);
     }
 

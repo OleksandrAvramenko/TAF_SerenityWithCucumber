@@ -1,6 +1,5 @@
 package pages.home;
 
-import org.openqa.selenium.WebDriver;
 import pages.AbstractBasePage;
 import pages.common.MenuSideBar;
 import lombok.Getter;

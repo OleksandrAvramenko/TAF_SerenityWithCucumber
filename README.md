@@ -15,6 +15,7 @@ Sample TestNG project using Selenium
 8. Folder with test suites configuration:
 ...\src\test\java\packages\suits 
 9. Simple Maven run configuration to run test suite:
-
-clean verify -Denv=dev -Dsuite=debug.xml 
-clean verify -Denv=dev -Dsuite=debug.xml -DforkCount=0 - to debug
+mvn clean verify -Denv=dev -Dsuite=debug.xml 
+mvn clean verify -Denv=dev -Dsuite=debug.xml -DforkCount=0 - to debug
+10. Maven command to generate Allure report in target report directory...\target\site\allure-maven-plugin
+mvn allure:report

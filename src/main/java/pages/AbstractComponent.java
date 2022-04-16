@@ -16,6 +16,7 @@ public abstract class AbstractComponent {
     protected void init() {
         this.driver = DriverSession.getDriver();
         this.wait = DriverSession.getDriverWait();
+        this.componentLoadWait = DriverSession.getPageLoadTimeout();
         PageFactory.initElements(driver, this);
     }
 
