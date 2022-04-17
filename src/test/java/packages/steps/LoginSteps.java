@@ -1,6 +1,7 @@
 package packages.steps;
 
 import core.service.ConfigurationManager;
+import io.qameta.allure.Step;
 import lombok.NoArgsConstructor;
 import models.User;
 import pages.login.LoginPage;
@@ -22,11 +23,13 @@ public class LoginSteps {
         return this;
     }
 
+    @Step("Navigate to Base URL")
     public LoginSteps navigateToBaseUrl() {
         loginPage.getDriver().get(ConfigurationManager.getProperty(HOST_URL));
         return this;
     }
 
+    @Step("Verify Login Page is Open")
     public LoginSteps verifyLoginPageIsOpened() {
         assertThat(loginPage.isPageOpened())
                 .withFailMessage(() -> "The Login Page is NOT opened.")
@@ -34,6 +37,7 @@ public class LoginSteps {
         return this;
     }
 
+    @Step("Input specific User credentials: {userType}")
     public LoginSteps inputSpecificUserCredentials(final UserType userType) {
         User user = getUser(userType);
         loginPage.getUsernameInput().sendKeys(user.getUsername());
@@ -41,6 +45,7 @@ public class LoginSteps {
         return this;
     }
 
+    @Step("Click LOGIN Button")
     public LoginSteps clickLoginButton() {
         loginPage.getLoginButton().click();
         return this;
@@ -52,6 +57,7 @@ public class LoginSteps {
         return homeSteps;
     }
 
+    @Step("Verify login error message")
     public LoginSteps verifyLoginErrorMessageText(final String message) {
         assertThat(loginPage.getLoginErrorMessage().getText()).contains(message);
         return this;
