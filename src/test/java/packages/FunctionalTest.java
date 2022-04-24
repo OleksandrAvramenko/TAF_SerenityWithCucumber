@@ -7,6 +7,7 @@ import core.driver.DriverManagerFactory;
 import core.driver.DriverSession;
 import core.driver.DriverType;
 import enums.Props;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
@@ -22,9 +23,9 @@ public class FunctionalTest {
     private static DriverManager driverManager;
 
     @BeforeSuite
-    public void setUp() {
+    public void setUp(final ITestContext context) {
         ConfigurationManager.loadProperties();
-        initDriver();
+        initDriver(context);
         configDriver();
     }
 
@@ -38,9 +39,9 @@ public class FunctionalTest {
         driverManager.getDriver().manage().deleteAllCookies();
     }
 
-    private void initDriver() {
+    private void initDriver(final ITestContext context) {
         DriverType driverType = DriverType.valueOf(ConfigurationManager.getProperty(Props.BROWSER));
-        driverManager = DriverManagerFactory.getDriverManager(driverType);
+        driverManager = DriverManagerFactory.getDriverManager(driverType, context);
         DriverSession.setDriver(driverManager.getDriver());
     }
 

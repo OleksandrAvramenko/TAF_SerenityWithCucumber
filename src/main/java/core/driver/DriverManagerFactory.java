@@ -1,6 +1,7 @@
 package core.driver;
 
 import exceptions.UnsupportedDriverException;
+import org.testng.ITestContext;
 
 import java.util.Arrays;
 
@@ -9,7 +10,7 @@ public class DriverManagerFactory {
     private DriverManagerFactory() {
     }
 
-    public static DriverManager getDriverManager(final DriverType type) {
+    public static DriverManager getDriverManager(final DriverType type, final ITestContext context) {
         DriverManager driverManager;
 
         switch (type) {
@@ -26,10 +27,10 @@ public class DriverManagerFactory {
                 driverManager = new RemoteFirefoxManager();
                 break;
             case SAUCELABS_CHROME:
-                driverManager = new SauceLabsChromeManager();
+                driverManager = new SauceLabsChromeManager(context);
                 break;
             case SAUCELABS_FIREFOX:
-                driverManager = new SauceLabFirefoxManager();
+                driverManager = new SauceLabFirefoxManager(context);
                 break;
             default:
                 throw new UnsupportedDriverException(
