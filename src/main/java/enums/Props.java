@@ -9,6 +9,7 @@ public enum Props {
     ENV("env"),
     BROWSER("browser"),
     REMOTE_DRIVER_URL("remote.driver.url"),
+    SAUCELAB_DRIVER_URL("saucelab.driver.url"),
     HOST_URL("host"),
     STANDARD_USER_NAME("standard.user.name"),
     STANDARD_USER_PASSWORD("standard.user.password"),

@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class RemoteFirefoxManager extends DriverManager {
+
     @Override
     protected void createDriver() {
         DesiredCapabilities capabilities = new DesiredCapabilities();

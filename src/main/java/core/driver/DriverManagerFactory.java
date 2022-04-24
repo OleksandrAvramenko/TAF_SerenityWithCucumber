@@ -25,6 +25,12 @@ public class DriverManagerFactory {
             case REMOTE_FIREFOX:
                 driverManager = new RemoteFirefoxManager();
                 break;
+            case SAUCELABS_CHROME:
+                driverManager = new SauceLabsChromeManager();
+                break;
+            case SAUCELABS_FIREFOX:
+                driverManager = new SauceLabFirefoxManager();
+                break;
             default:
                 throw new UnsupportedDriverException(
                         String.format("You are trying to use unsupported browser: %s.\nSupported browsers: %s",
