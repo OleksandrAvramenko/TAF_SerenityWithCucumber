@@ -19,6 +19,12 @@ public class DriverManagerFactory {
             case CHROME_HEADLESS:
                 driverManager = new ChromeHeadlessDriverManager();
                 break;
+            case REMOTE_CHROME:
+                driverManager = new RemoteChromeDriverManager();
+                break;
+            case REMOTE_FIREFOX:
+                driverManager = new RemoteFirefoxManager();
+                break;
             default:
                 throw new UnsupportedDriverException(
                         String.format("You are trying to use unsupported browser: %s.\nSupported browsers: %s",

@@ -8,6 +8,7 @@ import lombok.Getter;
 public enum Props {
     ENV("env"),
     BROWSER("browser"),
+    REMOTE_DRIVER_URL("remote.driver.url"),
     HOST_URL("host"),
     STANDARD_USER_NAME("standard.user.name"),
     STANDARD_USER_PASSWORD("standard.user.password"),

@@ -5,6 +5,8 @@ import enums.Props;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class DriverSession {
 
     private static WebDriver driver;
@@ -21,10 +23,12 @@ public class DriverSession {
     }
 
     public static WebDriverWait getDriverWait() {
-        return new WebDriverWait(driver, Long.valueOf(ConfigurationManager.getProperty(Props.EXPLICITLY_TIMEOUT)));
+        Long timeout = Long.valueOf(ConfigurationManager.getProperty(Props.EXPLICITLY_TIMEOUT));
+        return new WebDriverWait(driver, Duration.ofSeconds(timeout));
     }
 
     public static WebDriverWait getPageLoadTimeout() {
-        return new WebDriverWait(driver, Long.valueOf(ConfigurationManager.getProperty(Props.PAGE_LOAD_TIMEOUT)));
+        Long timeout = Long.valueOf(ConfigurationManager.getProperty(Props.PAGE_LOAD_TIMEOUT));
+        return new WebDriverWait(driver, Duration.ofSeconds(timeout));
     }
 }

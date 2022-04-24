@@ -1,9 +1,15 @@
 package core.driver;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum DriverType {
-    CHROME,
-    CHROME_HEADLESS
-}
+    CHROME("chrome"),
+    CHROME_HEADLESS("chrome"),
+    REMOTE_CHROME("chrome"),
+    REMOTE_FIREFOX("firefox");
+
+    private String browser;
+    }
