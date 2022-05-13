@@ -2,6 +2,7 @@
 .idea/
 target/
 reports/
+.allure
 
 #Files
 *.iml
